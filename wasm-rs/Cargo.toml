@@ -1,0 +1,19 @@
+[package]
+name = "wasm-rs"
+version = "0.1.0"
+description = "A Rust library for decode/encode .proto files"
+repository = "https://github.com/doomed-doom/wasm-proto-integration"
+license = "MIT"
+edition = "2024"
+build = "build.rs"
+
+[lib]
+crate-type = ["cdylib"]
+
+[dependencies]
+prost = "0.14.3"
+prost-build = "0.14.3"
+wasm-bindgen = "0.2"
+
+[build-dependencies]
+prost-build = "0.14.3"
