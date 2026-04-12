@@ -1,0 +1,23 @@
+{
+  "name": "wasm-js",
+  "version": "1.0.0",
+  "description": "A JavaScript module for decode/encode .proto files",
+  "homepage": "https://github.com/doomed-doom/wasm-proto-integration#readme",
+  "bugs": {
+    "url": "https://github.com/doomed-doom/wasm-proto-integration/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/doomed-doom/wasm-proto-integration.git"
+  },
+  "license": "MIT",
+  "author": "",
+  "type": "module",
+  "main": "index.js",
+  "scripts": {
+    "dev": "node index.js"
+  },
+  "dependencies": {
+    "protobufjs": "^8.0.1"
+  }
+}
