@@ -4,7 +4,10 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "build-deps": "pbjs -t static-module -w es6 -o src/proto.js ../proto/main.proto",
+    "build-proto": "pbjs -t static-module -w es6 -o src/proto.js ../proto/main.proto",
+    "build-wasm": "wasm-pack build ../wasm-rs --target web",
+    "install-wasm": "npm i ../wasm-rs/pkg",
+    "build-deps": "npm run build-proto && npm run build-wasm && npm run install-wasm",
     "predev": "npm run build-deps",
     "dev": "vite",
     "prebuild": "npm run build-deps",
@@ -15,6 +18,7 @@
   },
   "dependencies": {
     "protobufjs-cli": "^2.0.1",
-    "wasm-js": "file:../wasm-js"
+    "wasm-js": "file:../wasm-js",
+    "wasm-rs": "file:../wasm-rs/pkg"
   }
 }

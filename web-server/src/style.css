@@ -7,7 +7,7 @@ body div input, button, div {
     font-size: 16px;
 }
 
-body div button {
+body div select, button {
     margin-left: 10px;
 }
 
