@@ -8,5 +8,8 @@ export default defineConfig({
         "../wasm-rs",
       ]
     }
+  },
+  resolve: {
+    preserveSymlinks: true
   }
 });
