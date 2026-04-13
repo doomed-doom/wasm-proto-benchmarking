@@ -2,3 +2,4 @@
 .vscode
 wasm-js/node_modules
 wasm-rs/target
+wasm-rs/pkg
