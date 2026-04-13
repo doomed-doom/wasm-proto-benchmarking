@@ -2,8 +2,7 @@ import protobuf from "protobufjs";
 
 export async function initProto(fileurl = "../proto/main.proto") {
     const root = await protobuf.load(fileurl);
-    Payload = root.lookupType("Payload");
-    console.log("Proto-module init succesfully");
+    return root.lookupType("Payload");
 }
 
 export function encode(payload, count) {
