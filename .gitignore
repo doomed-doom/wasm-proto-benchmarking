@@ -1,3 +1,4 @@
 .git
+.vscode
 wasm-js/node_modules
 wasm-rs/target

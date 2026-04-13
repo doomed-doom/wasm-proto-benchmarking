@@ -1,10 +1,15 @@
 import protobuf from "protobufjs";
 
-const root = await protobuf.load("../proto/main.proto");
-const Payload = root.lookupType("Payload");
+export async function initProto(fileurl = "../proto/main.proto") {
+    const root = await protobuf.load(fileurl);
+    Payload = root.lookupType("Payload");
+    console.log("Proto-module init succesfully");
+}
 
-function encode(count) {
-    const payload = {
+export function encode(payload, count) {
+    if (!payload) throw new Error("Proto not initialized");
+
+    const items = {
         items: Array.from({ length: count }, (_, i) => ({
             id: i,
             name: "item_" + i,
@@ -12,9 +17,10 @@ function encode(count) {
         }))
     };
 
-    return Payload.encode(payload).finish();
+    return payload.encode(items).finish();
 }
 
-function decode(buffer) {
-    Payload.decode(buffer);
+export function decode(payload, buffer) {
+    if (!payload) throw new Error("Proto not initialized");
+    payload.decode(buffer);
 }
