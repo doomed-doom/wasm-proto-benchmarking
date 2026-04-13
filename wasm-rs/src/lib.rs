@@ -28,9 +28,8 @@ pub fn encode(count: usize) -> Vec<u8> {
 }
 
 #[wasm_bindgen]
-pub fn decode(ptr: *const u8, len: usize) {
-    let bytes = unsafe { std::slice::from_raw_parts(ptr, len) };
-    let _ = Payload::decode(bytes).unwrap();
+pub fn decode(buf: &[u8]) {
+    Payload::decode(buf).unwrap();
 }
 
 #[wasm_bindgen]
