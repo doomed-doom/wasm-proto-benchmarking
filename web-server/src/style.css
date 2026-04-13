@@ -1,0 +1,16 @@
+body {
+    margin: 0;
+    padding: 20px;
+}
+
+body div input, button, div {
+    font-size: 16px;
+}
+
+body div button {
+    margin-left: 10px;
+}
+
+body div div {
+    margin-top: 10px;
+}

@@ -1,0 +1,20 @@
+{
+  "name": "web-server",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build-deps": "pbjs -t static-module -w es6 -o src/proto.js ../proto/main.proto",
+    "predev": "npm run build-deps",
+    "dev": "vite",
+    "prebuild": "npm run build-deps",
+    "build": "vite build"
+  },
+  "devDependencies": {
+    "vite": "^8.0.4"
+  },
+  "dependencies": {
+    "protobufjs-cli": "^2.0.1",
+    "wasm-js": "file:../wasm-js"
+  }
+}
