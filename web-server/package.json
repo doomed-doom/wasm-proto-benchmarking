@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "build-proto": "pbjs -t static-module -w es6 -o src/proto.js ../proto/main.proto",
-    "install-wasm-js": "npm i ../wasm-js",
+    "install-wasm-js": "npm i --prefix ../wasm-js",
     "build-wasm-rs": "wasm-pack build ../wasm-rs --target web",
     "install-wasm-rs": "npm i ../wasm-rs/pkg",
     "build-deps": "npm run build-proto && npm run install-wasm-js && npm run build-wasm-rs && npm run install-wasm-rs",
